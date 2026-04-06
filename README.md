@@ -88,9 +88,9 @@ Before running your application on the Antithesis platform, it can be convenient
 
 This is a 3 step process, which is [described in greater detail here](https://antithesis.com/docs/test_templates/testing_locally/): 
 
-1. Pull the bitnami/etcd:3.5 image using the following command: 
+1. Pull the quay.io/coreos/etcd:3.5 image using the following command: 
 
-`docker pull bitnami/etcd:3.5`
+`docker pull quay.io/coreos/etcd:v3.5.0`
 
 2. Build the client image. From within the `/test-template` directory, run the following command: 
 
@@ -114,4 +114,4 @@ You've now validated that your test is ready to run on the Antithesis platform! 
 
 ## Example Report
 
-Using the three node etcd cluster and the `client` image built from this repository, we ran a 1 hour test. The resulting [triage report](https://antithesis.com/docs/reports/triage/) can be found [here](https://public.antithesis.com/report/f6oh7KZ6Pchcv9nGfo5oL9IU/lCbpXJUfNwfknLazqvV3mWD3CM37l89raJTdSXNBh3c.html), and [our docs](https://antithesis.com/docs/reports/triage/) show you how to interpret it. 
+Using the three node etcd cluster and the `client` image built from this repository, we ran a 1 hour test. The resulting [triage report](https://antithesis.com/docs/reports/triage/) can be found [here](https://public.antithesis.com/report/f6oh7KZ6Pchcv9nGfo5oL9IU/lCbpXJUfNwfknLazqvV3mWD3CM37l89raJTdSXNBh3c.html), and [our docs](https://antithesis.com/docs/reports/triage/) show you how to interpret it.
