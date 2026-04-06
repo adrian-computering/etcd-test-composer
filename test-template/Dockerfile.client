@@ -1,4 +1,4 @@
-FROM docker.io/ubuntu:latest 
+FROM docker.io/ubuntu:latest
 
 # Install dependencies
 RUN apt-get update -y && apt-get install -y pip wget
@@ -47,19 +47,21 @@ RUN pip install antithesis cffi --break-system-packages
 # Copying python entrypoint. It contains the lifecycle setup_complete message.
 COPY ./entrypoint/entrypoint.py /entrypoint.py
 
-# Copying python executable into Test Composer directory
+# Copying generate traffic test python executable into Test Composer directory
 COPY ./python-generate-traffic/parallel_driver_generate_traffic.py /opt/antithesis/test/v1/main/parallel_driver_generate_traffic.py
 
 # Copying additional resources into a resources folder
 COPY ./python-generate-traffic/resources/helper.py /opt/antithesis/resources/helper.py
 
+# Copying raft convergence python executable into Test Composer directory
+COPY ./python-single-leader/eventually_driver_raft_convergence.py /opt/antithesis/test/v1/main/eventually_driver_raft_convergence.py
 
 # GO:
 
 # Install go
 RUN wget https://golang.org/dl/go1.22.5.linux-amd64.tar.gz
 RUN tar -C /usr/local -xzf go1.22.5.linux-amd64.tar.gz
-ENV PATH=$PATH:/usr/local/go/bin 
+ENV PATH=$PATH:/usr/local/go/bin
 
 # Copying go script and building an executable into Test Composer directory
 WORKDIR /opt/antithesis/go-delete-keys
