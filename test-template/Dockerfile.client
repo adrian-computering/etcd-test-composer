@@ -54,7 +54,7 @@ COPY ./python-generate-traffic/parallel_driver_generate_traffic.py /opt/antithes
 COPY ./python-generate-traffic/resources/helper.py /opt/antithesis/resources/helper.py
 
 # Copying raft convergence python executable into Test Composer directory
-COPY ./python-single-leader/eventually_driver_raft_convergence.py /opt/antithesis/test/v1/main/eventually_driver_raft_convergence.py
+COPY ./python-single-leader/eventually_raft_convergence.py /opt/antithesis/test/v1/main/eventually_raft_convergence.py
 
 # GO:
 
