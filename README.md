@@ -96,6 +96,8 @@ This is a 3 step process, which is [described in greater detail here](https://an
 
 `docker build . -f Dockerfile.client -t etcd-client:latest`
 
+Note: On Apple Silicon or other arm64 systems, pin the amd64 architecture with --platform=linux/amd64   
+
 3. run `docker-compose up` from the config directory to start all containers defined in `docker-compose.yml`
 
 4. After the client container has signaled `setupComplete` (or printed `cluster is healthy`), you can run the parallel driver 1 to many times via `docker exec`: 
