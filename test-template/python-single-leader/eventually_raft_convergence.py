@@ -99,7 +99,6 @@ def validate_convergence(observations):
 
 if __name__ == "__main__":
     cluster_observations = observe_members_and_leaders(cluster_nodes)
-
     # We test for 100% availability, then both leadership and membership convergence in a single driver,
     # in case a bug triggers a mixed fault
     validate_convergence(cluster_observations)
